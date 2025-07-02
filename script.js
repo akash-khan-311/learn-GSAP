@@ -1,25 +1,9 @@
-var initialPath = `M 10 100 Q 250 100 490 100`;
-const finalPath = `M 10 100 Q 250 100 490 100`;
+var h1 = document.querySelector('h1 span');
 
-var string = document.querySelector('#string');
-
-string.addEventListener('mousemove', (e) => {
-  path = `M 10 100 Q ${e.clientX} ${e.clientY} 490 100`;
-  gsap.to('svg path', {
-    duration: 0.3,
-    attr: {
-      d: path,
-    },
-    ease: 'power3.out',
-  });
-});
-
-string.addEventListener('mouseleave', () => {
-  gsap.to('svg path', {
-    attr: {
-      d: initialPath,
-    },
-    duration: 1.5,
-    ease: 'elastic.out(1, 0.2)',
-  });
+gsap.from(h1, {
+  opacity: 0,
+  y: 300,
+  duration: 0.5,
+  delay: 0.5,
+  stagger: 0.15,
 });
