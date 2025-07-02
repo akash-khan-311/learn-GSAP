@@ -1,9 +1,16 @@
-var h1 = document.querySelector('h1 span');
+var myName = document.querySelector('#name span');
+const role = document.querySelector('#role span');
 
-gsap.from(h1, {
+const tl = gsap.timeline();
+
+tl.from(myName, {
+  y: 200,
   opacity: 0,
-  y: 300,
   duration: 0.5,
-  delay: 0.5,
-  stagger: 0.15,
+});
+
+tl.from(role, {
+  y: 200,
+  opacity: 0,
+  duration: 0.5,
 });
